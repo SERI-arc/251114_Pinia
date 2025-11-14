@@ -45,13 +45,12 @@ export const useProductStore = defineStore('product', {
       }
     },
 
-    deleteProduct(product) {
-      const item = this.products.find(p => p.id === product.id)
-      if (item) {
-        item.quantity = 0
-      }
-    },
-
+          removeFromCart(id) {
+        const item = this.products.find(p => p.id === id)
+        if (item) {
+          item.quantity = 0
+        }
+      },
     // カートを空にする
     clearCart() {
       this.products.forEach(p => (p.quantity = 0))

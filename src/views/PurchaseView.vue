@@ -14,6 +14,11 @@ const totalPrice = computed(() => store.totalPrice)
 const loading = ref(false)
 const showPopup = ref(false)
 
+// 商品を削除する処理
+const removeItem = (id) => {
+  store.removeFromCart(id)
+}
+
 // 購入処理
 const handlePurchase = async () => {
   loading.value = true
@@ -60,7 +65,7 @@ const handlePurchase = async () => {
               <v-col>
                 <v-btn icon="mdi-delete"
                        color="error"
-                       @click="deleteProduct">
+                       @click="removeItem(item.id)">
                 </v-btn>
               </v-col>
               </v-row>
