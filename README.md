@@ -44,3 +44,4 @@ npm run lint
 ```
 "# 251114_Pinia" 
 "# 251120_KADAI2" 
+"# myapp" 
